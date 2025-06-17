@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>アプリを起動しています...</title>
+  <script>
+
+    const appScheme = 'reloapp://';
+
+    window.onload = function () {
+      const now = new Date().getTime();
+      setTimeout(function () {
+        const elapsed = new Date().getTime() - now;
+        if (elapsed < 1500) {
+          window.location.href = isIOS ? iosStoreURL : androidStoreURL;
+        }
+      }, 1000);
+      window.location.href = appScheme;
+    };
+  </script>
+</head>
+<body>
+  <p>アプリが起動しない場合は、<br>以下からアプリをダウンロードしてください。</p>
+    <p>
+      <a href="https://apps.apple.com/jp/app/relo-club/id988722086" target="_blank">App Store（iOS）</a><br>
+      <a href="https://play.google.com/store/apps/details?id=net.fukuri.memberapp.memberapp&hl=ja" target="_blank">Google Play（Android）</a>
+    </p>
+</body>
+</html>
